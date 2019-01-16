@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejemplo</title>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      // Esperamos a que se cargue la API de Cordova
+      function onLoad() {
+          document.addEventListener("deviceready", onDeviceReady, false);
+      }
+
+      // La API de Cordova ya está disponible
+      function onDeviceReady() {
+          // ¡Ya podemos usar la librería de Cordova!
+          
+          eventlisteners()
+          devInfo();
+        }
+    function eventlisteners(){
+        document.addEventListener("online", onOnline, false);
+          document.addEventListener("offline", onOffline, false);
+          document.addEventListener("resume", onResume, false);
+          document.addEventListener("pause", onPause, false);
+          document.addEventListener("menubutton", onMenuKeyDown, false);
+          document.addEventListener("volumedownbutton", onVolumeDownKeyDown, false);
+          document.addEventListener("volumeupbutton", onVolumeUpKeyDown, false);
+          document.addEventListener("backbutton", onBackKeyDown, false);
+    }
+       
+    </script>
+  </head>
+  <body onload="onLoad()">
+    <h2>Dispositivo:</h2>
+    <div id="devInfo">
+        <ul id="devInfoList"></ul>
+    </div>
+    <h2>Log de eventos:</h2>
+    <div id="log" style="margin:5px;padding:5px;border:1px solid silver;color:gray">
+    </div>
+  </body>
+  <script type="text/javascript" charset="utf-8" src="js/custom.js"></script>
+</html>
